@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Answers
   - Operation
+  - Buttons
   layers:
   - Default
   - TransparentFX

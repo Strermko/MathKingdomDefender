@@ -735,7 +735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 155191107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &155191107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +1002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 188324410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &188324410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1372,7 +1396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 479271816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &479271816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,7 +1587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2385,7 +2421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088176475}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088176475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,7 +3144,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1391587612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1391587612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3366,7 +3426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3455,7 +3515,7 @@ GameObject:
   - component: {fileID: 1554695835}
   m_Layer: 5
   m_Name: Buttons
-  m_TagString: Untagged
+  m_TagString: Buttons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3605,7 +3665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3764,7 +3824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1586558731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1586558731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,7 +4096,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1792574479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1792574479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4186,6 +4270,7 @@ MonoBehaviour:
   sliderObject: {fileID: 1240543327}
   sliderSpeed: 10
   answersTag: Answers
+  buttonsTag: Buttons
 --- !u!4 &1836688525
 Transform:
   m_ObjectHideFlags: 0
@@ -4416,7 +4501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1897065833}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1897065833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4747,7 +4844,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2081512080}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836688524}
+        m_TargetAssemblyTypeName: Observer, Assembly-CSharp
+        m_MethodName: SendValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2081512080
 MonoBehaviour:
   m_ObjectHideFlags: 0
