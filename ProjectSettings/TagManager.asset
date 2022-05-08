@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Answers
-  - Operation
   - Buttons
+  - Operation
+  - Points
   layers:
   - Default
   - TransparentFX

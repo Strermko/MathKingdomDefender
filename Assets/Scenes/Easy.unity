@@ -738,7 +738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1005,7 +1005,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1399,7 +1399,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2424,7 +2424,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3147,7 +3147,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3827,7 +3827,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4099,7 +4099,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4269,8 +4269,13 @@ MonoBehaviour:
   - {fileID: 1826684516}
   sliderObject: {fileID: 1240543327}
   sliderSpeed: 10
-  answersTag: Answers
-  buttonsTag: Buttons
+  answerList:
+  - {fileID: 1116737956}
+  - {fileID: 2025997700}
+  - {fileID: 1322962218}
+  buttons: {fileID: 1554695833}
+  operationTag: Operation
+  Points: {fileID: 837402055}
 --- !u!4 &1836688525
 Transform:
   m_ObjectHideFlags: 0
@@ -4504,7 +4509,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4847,7 +4852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1836688524}
         m_TargetAssemblyTypeName: Observer, Assembly-CSharp
-        m_MethodName: SendValue
+        m_MethodName: ClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

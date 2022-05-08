@@ -4,55 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
 public class Observer : MonoBehaviour
 {
     [SerializeField] List<GameObject> health; 
     [SerializeField] GameObject sliderObject;
     [Range(0f, 100f)] [SerializeField] float sliderSpeed = 10;
-
-    [SerializeField] string answersTag;
-    [SerializeField] string buttonsTag;
+    [SerializeField] GameObject[] answerList;
+    [SerializeField] GameObject buttons;
+    [SerializeField] string operationTag;
+    [SerializeField] GameObject Points;
 
 
     private Slider slider;
-    private GameObject[] answerList;
-    private GameObject buttons;
     private int clickCounter;
+
     void Start()
     {
         slider = sliderObject.GetComponent<Slider>();
-        answerList = GameObject.FindGameObjectsWithTag(answersTag);
-        buttons = GameObject.FindGameObjectWithTag(buttonsTag);
         clickCounter = 0;
     }
 
     void Update()
     {
-        UpdateSliderValue(sliderSpeed);
+        SliderMovement(sliderSpeed);
     }
 
-    private float UpdateSliderValue(float sliderSpeed)
-    {
-        slider.value -= Time.deltaTime * sliderSpeed;
-        if(slider.value <= 1){
-            slider.value = 100;
-            if(health.Count > 0){
-                Destroy(health[health.Count-1]);
-                health.RemoveAt(health.Count -1);
-            }
-        } 
-        return slider.value;
-    }
-
-    public void SendValue(){
-        GameObject usedButton = EventSystem.current.currentSelectedGameObject;
-        usedButton.GetComponent<Button>().interactable = false;
-        
-        string value = Operator.ReturnChildTextValue(usedButton);
-        Operator.SetChildTextValue(answerList[clickCounter], value);
+    public void ClickEvent(){
+        HandleButtonEvent();
         if (clickCounter == answerList.Length -1)
         {
-            if(Operator.CheckAnswers(answerList, "+")) Debug.Log("Good!");
+            if(Operator.CheckAnswers(answerList, operationTag)) Operator.SetChildTextValue(Points, int.Parse(Operator.ReturnChildTextValue(Points)) + 50 + "");
             ResetFields();
             clickCounter = 0;
         }
@@ -61,17 +43,50 @@ public class Observer : MonoBehaviour
         }
     }
 
+    private float SliderMovement(float sliderSpeed)
+    {
+        slider.value -= Time.deltaTime * sliderSpeed;
+        if(slider.value <= 1){
+            if(health.Count > 0){
+                Destroy(health[health.Count-1]);
+                health.RemoveAt(health.Count -1);
+            }
+            slider.value = 100;
+        } 
+        return slider.value;
+    }
+
     private void ResetFields()
     {
+        //Reset answer fields
         foreach (var item in answerList)
         {
             Operator.SetChildTextValue(item, "");
         }
-        foreach (var item in buttons.GetComponentsInChildren<Button>())
-        {
-            if (item.interactable == false) item.interactable = true;
-        }
-
+        ResetButtonsValue();
         slider.value = 100;
     }
+
+    private void HandleButtonEvent(){
+        //Get clicked button and disable it
+        GameObject usedButton = EventSystem.current.currentSelectedGameObject;
+        usedButton.GetComponent<Button>().interactable = false;
+        
+        //Send value to answer field
+        string value = Operator.ReturnChildTextValue(usedButton);
+        Operator.SetChildTextValue(answerList[clickCounter], value);
+    }
+
+    private void ResetButtonsValue(){
+        int counter = 0;
+        var valueList = Operator.GenerateListOfValue();
+        foreach (var item in buttons.GetComponentsInChildren<Button>())
+        {
+            Operator.SetChildTextValue(item.gameObject, valueList[counter] + "");
+            if (item.interactable == false) item.interactable = true;
+            counter+=1;
+        }
+    }
+
+
 }
