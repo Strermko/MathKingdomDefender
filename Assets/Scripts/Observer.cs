@@ -50,24 +50,28 @@ public class Observer : MonoBehaviour
         
         string value = Operator.ReturnChildTextValue(usedButton);
         Operator.SetChildTextValue(answerList[clickCounter], value);
-        if (clickCounter == answerList.Length -1){
-            int a, b, c;
-            a = int.Parse(Operator.ReturnChildTextValue(answerList[0]));
-            b = int.Parse(Operator.ReturnChildTextValue(answerList[1]));
-            c = int.Parse(Operator.ReturnChildTextValue(answerList[2]));
-            string test = (a + b == c) ? "Good" : "Bad";
-            Debug.Log(test);
-            foreach (var item in answerList)
-            {
-                Operator.SetChildTextValue(item, "");
-            }
-            foreach (var item in buttons.GetComponentsInChildren<Button>())
-            {
-                if(item.interactable == false) item.interactable = true;
-            }
+        if (clickCounter == answerList.Length -1)
+        {
+            if(Operator.CheckAnswers(answerList, "+")) Debug.Log("Good!");
+            ResetFields();
             clickCounter = 0;
-        } else {
+        }
+        else {
             clickCounter += 1;
         }
+    }
+
+    private void ResetFields()
+    {
+        foreach (var item in answerList)
+        {
+            Operator.SetChildTextValue(item, "");
+        }
+        foreach (var item in buttons.GetComponentsInChildren<Button>())
+        {
+            if (item.interactable == false) item.interactable = true;
+        }
+
+        slider.value = 100;
     }
 }
