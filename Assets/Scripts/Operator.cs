@@ -32,7 +32,7 @@ public static class Operator
             case "*":
                 if(a * b == c) answ = true;
                 break;
-            case "/":
+            case "/" or ":":
                 if(a / b == c) answ = true;
                 break;
             default:
@@ -50,4 +50,10 @@ public static class Operator
         return values;
     }
 
+    public static char GetNewOperation(){
+        char operation = '+';
+        
+
+        return operation;
+    }
 }

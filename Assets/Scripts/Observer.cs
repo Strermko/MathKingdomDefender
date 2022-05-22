@@ -10,6 +10,7 @@ public class Observer : MonoBehaviour
     [SerializeField] List<GameObject> health; 
     [SerializeField] GameObject sliderObject;
     [Range(0f, 100f)] [SerializeField] float sliderSpeed = 10;
+    [SerializeField] float sliderSpeedBoost;
     [SerializeField] GameObject[] answerList;
     [SerializeField] GameObject buttons;
     [SerializeField] string operationTag;
@@ -18,11 +19,17 @@ public class Observer : MonoBehaviour
 
     private Slider slider;
     private int clickCounter;
+    private float defaultSliderSpeed;
+    private SceneLoader sceneLoader;
+    private TMPro.TextMeshProUGUI operation;
 
     void Start()
     {
+        sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
+        defaultSliderSpeed = sliderSpeed;
         slider = sliderObject.GetComponent<Slider>();
         clickCounter = 0;
+        operation = GameObject.FindGameObjectWithTag("Operation").GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     void Update()
@@ -30,15 +37,27 @@ public class Observer : MonoBehaviour
         SliderMovement(sliderSpeed);
     }
 
-    public void ClickEvent(){
+    public void ClickEvent()
+    {
         HandleButtonEvent();
-        if (clickCounter == answerList.Length -1)
+        ChechAnswers();
+    }
+
+    private void ChechAnswers()
+    {
+        if (clickCounter == answerList.Length - 1)
         {
-            if(Operator.CheckAnswers(answerList, operationTag)) Operator.SetChildTextValue(Points, int.Parse(Operator.ReturnChildTextValue(Points)) + 50 + "");
+            if (Operator.CheckAnswers(answerList, operationTag)){
+                Operator.SetChildTextValue(Points, int.Parse(Operator.ReturnChildTextValue(Points)) + 50 + "");
+            } else {
+                
+                if(health.Count <= 0) sceneLoader.LoadScene("GameOver");
+            }
             ResetFields();
             clickCounter = 0;
         }
-        else {
+        else
+        {
             clickCounter += 1;
         }
     }
@@ -64,6 +83,7 @@ public class Observer : MonoBehaviour
             Operator.SetChildTextValue(item, "");
         }
         ResetButtonsValue();
+        sliderSpeed += sliderSpeedBoost;
         slider.value = 100;
     }
 
@@ -86,6 +106,8 @@ public class Observer : MonoBehaviour
             if (item.interactable == false) item.interactable = true;
             counter+=1;
         }
+        //ListOfOperation.Plus;
+        Debug.Log(Operator.GetNewOperation());
     }
 
 
