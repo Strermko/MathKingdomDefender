@@ -7,12 +7,15 @@ public static class Operator
     public static void SetChildTextValue(GameObject gameObject, string value){
         gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = value;
     }
+    public static void SetChildTextValue(GameObject gameObject, char value){
+        gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "" + value;
+    }
 
     public static string ReturnChildTextValue(GameObject gameObject){
         return gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
     }
 
-    public static bool CheckAnswers(GameObject[] gameObjects, string tag){
+    public static bool CheckAnswers(GameObject[] gameObjects, GameObject execution){
         bool answ = false;
         //Get params from answer fields
         int a, b, c;
@@ -20,7 +23,7 @@ public static class Operator
         b = int.Parse(gameObjects[1].GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
         c = int.Parse(gameObjects[2].GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
         //Get operation value
-        string operation = ReturnChildTextValue(GameObject.FindGameObjectWithTag(tag));
+        string operation = ReturnChildTextValue(execution);
         //Calculate and return value
         switch(operation){
             case "+":
@@ -50,10 +53,13 @@ public static class Operator
         return values;
     }
 
-    public static char GetNewOperation(){
+    public static char GetNewOperation(int range = 20){
         char operation = '+';
-        
-
+        int number = Random.Range(0,range);
+        if(number <= 40) operation = '*';
+        if(number <= 30) operation = ':';
+        if(number <= 20) operation = '-';
+        if(number <= 10) operation = '+';
         return operation;
     }
 }

@@ -285,18 +285,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221177557}
   m_LocalRotation: {x: -0, y: -0, z: 0.016488137, w: 0.9998641}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 5.226598, y: 5.226598, z: 5.226598}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9467961}
   m_Father: {fileID: 926100463}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.889}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 166, y: -823.00195}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -24, y: -952}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221177559
 MonoBehaviour:
@@ -554,18 +554,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300232245}
   m_LocalRotation: {x: -0, y: -0, z: -0.044056583, w: 0.99902904}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.226598, y: 5.226598, z: 5.226598}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 256711479}
   m_Father: {fileID: 926100463}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.05}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.1, y: -195}
-  m_SizeDelta: {x: 251.5, y: 30}
+  m_AnchoredPosition: {x: 25, y: -288}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300232247
 MonoBehaviour:
@@ -691,7 +691,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 926100463}
+  m_Father: {fileID: 2047572282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -930,13 +930,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 305644938}
   - {fileID: 1001581707}
   - {fileID: 1614488673}
   - {fileID: 300232246}
   - {fileID: 221177558}
   m_Father: {fileID: 2047572282}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1019,17 +1018,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001581706}
-  m_LocalRotation: {x: -0, y: -0, z: -0.04630849, w: 0.99892724}
+  m_LocalRotation: {x: -0, y: -0, z: 0.091689914, w: 0.9957876}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.61515, y: 0.61515, z: 0.61515}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 926100463}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.522}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 9, y: -374}
+  m_AnchoredPosition: {x: -14, y: -321}
   m_SizeDelta: {x: 2166.8, y: 838.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001581708
@@ -1054,15 +1053,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Math Kingdom Defender
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 990a592b4747b5144990aca0e95a6999, type: 2}
-  m_sharedMaterial: {fileID: -1042574072343631067, guid: 990a592b4747b5144990aca0e95a6999, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 21b3d98bbd5084f46bcd2acd0d9dc7a5, type: 2}
+  m_sharedMaterial: {fileID: 6646927640580038088, guid: 21b3d98bbd5084f46bcd2acd0d9dc7a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289079396
-  m_fontColor: {r: 0.39134908, g: 0.15659486, b: 0.6509434, a: 1}
+    rgba: 4279439633
+  m_fontColor: {r: 0.06514774, g: 0.06710187, b: 0.0754717, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1079,14 +1078,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 250
-  m_fontSizeBase: 250
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 39
-  m_HorizontalAlignment: 2
+  m_fontStyle: 35
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1297,12 +1296,12 @@ RectTransform:
   m_Children:
   - {fileID: 1204759077}
   m_Father: {fileID: 926100463}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.093}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 397.99805}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 12, y: 326}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614488674
 MonoBehaviour:
@@ -1490,6 +1489,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 305644938}
   - {fileID: 926100463}
   m_Father: {fileID: 0}
   m_RootOrder: 1

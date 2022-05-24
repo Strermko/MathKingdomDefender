@@ -8,13 +8,19 @@ using UnityEngine.EventSystems;
 public class Observer : MonoBehaviour
 {
     [SerializeField] List<GameObject> health; 
+    [Header("Slider")]
     [SerializeField] GameObject sliderObject;
     [Range(0f, 100f)] [SerializeField] float sliderSpeed = 10;
     [SerializeField] float sliderSpeedBoost;
+    [Header("Answers Objects")]
     [SerializeField] GameObject[] answerList;
     [SerializeField] GameObject buttons;
-    [SerializeField] string operationTag;
+    [SerializeField] GameObject execution;
+    [Header("Points and feedbacks")]
     [SerializeField] GameObject Points;
+    [Header("Particles")]
+    [SerializeField] GameObject GoodAnswer;
+    [SerializeField] GameObject BadAnswer;
 
 
     private Slider slider;
@@ -22,19 +28,30 @@ public class Observer : MonoBehaviour
     private float defaultSliderSpeed;
     private SceneLoader sceneLoader;
     private TMPro.TextMeshProUGUI operation;
+    private ParticleSystem goodAnswer;
+    private ParticleSystem badAnswer;
 
     void Start()
+    {
+        StartConfiguration();
+    }
+
+    void Update()
+    {
+        SliderMovement(sliderSpeed);
+    }
+
+    private void StartConfiguration()
     {
         sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
         defaultSliderSpeed = sliderSpeed;
         slider = sliderObject.GetComponent<Slider>();
         clickCounter = 0;
         operation = GameObject.FindGameObjectWithTag("Operation").GetComponent<TMPro.TextMeshProUGUI>();
-    }
-
-    void Update()
-    {
-        SliderMovement(sliderSpeed);
+        ResetFields();
+        Operator.SetChildTextValue(Points, "0");
+        goodAnswer = GoodAnswer.GetComponent<ParticleSystem>();
+        badAnswer = BadAnswer.GetComponent<ParticleSystem>();
     }
 
     public void ClickEvent()
@@ -47,10 +64,13 @@ public class Observer : MonoBehaviour
     {
         if (clickCounter == answerList.Length - 1)
         {
-            if (Operator.CheckAnswers(answerList, operationTag)){
+            if (Operator.CheckAnswers(answerList, execution)){
                 Operator.SetChildTextValue(Points, int.Parse(Operator.ReturnChildTextValue(Points)) + 50 + "");
+                goodAnswer.Play();
             } else {
-                
+                badAnswer.Play();
+                DecreaseHealth();
+                sliderSpeed = defaultSliderSpeed;
                 if(health.Count <= 0) sceneLoader.LoadScene("GameOver");
             }
             ResetFields();
@@ -65,14 +85,21 @@ public class Observer : MonoBehaviour
     private float SliderMovement(float sliderSpeed)
     {
         slider.value -= Time.deltaTime * sliderSpeed;
-        if(slider.value <= 1){
-            if(health.Count > 0){
-                Destroy(health[health.Count-1]);
-                health.RemoveAt(health.Count -1);
-            }
+        if(slider.value <= 1)
+        {
+            DecreaseHealth();
             slider.value = 100;
-        } 
+        }
         return slider.value;
+    }
+
+    private void DecreaseHealth()
+    {
+        if (health.Count > 0)
+        {
+            Destroy(health[health.Count - 1]);
+            health.RemoveAt(health.Count - 1);
+        }
     }
 
     private void ResetFields()
@@ -107,7 +134,7 @@ public class Observer : MonoBehaviour
             counter+=1;
         }
         //ListOfOperation.Plus;
-        Debug.Log(Operator.GetNewOperation());
+        Operator.SetChildTextValue(execution, Operator.GetNewOperation(20));
     }
 
 
