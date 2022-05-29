@@ -7,23 +7,24 @@ using UnityEngine.EventSystems;
 
 public class Observer : MonoBehaviour
 {
-    [SerializeField] List<GameObject> health; 
-    [Header("Slider")]
-    [SerializeField] GameObject sliderObject;
-    [Range(0f, 100f)] [SerializeField] float sliderSpeed = 10;
-    [SerializeField] float sliderSpeedBoost;
-    [Header("Answers Objects")]
+    // Serialized object, for more clear code and separated scripts to pointed object
+    [Header("Main Game Objects")]
+    [SerializeField] GameObject Lifes;
+    [SerializeField] GameObject Timer;
+    [SerializeField] GameObject Answers;
+    [Header("Parameters")]
+    [Range(0f, 100f)] [SerializeField] float timerSpeed = 10;
+    [SerializeField] float timerSpeedBoost;
     [SerializeField] GameObject[] answerList;
     [SerializeField] GameObject buttons;
     [SerializeField] GameObject execution;
-    [Header("Points and feedbacks")]
     [SerializeField] GameObject Points;
-    [Header("Particles")]
     [SerializeField] GameObject GoodAnswer;
     [SerializeField] GameObject BadAnswer;
 
 
-    private Slider slider;
+    private Lifes _lifes;
+    private Timer _timer;
     private int clickCounter;
     private float defaultSliderSpeed;
     private SceneLoader sceneLoader;
@@ -31,21 +32,20 @@ public class Observer : MonoBehaviour
     private ParticleSystem goodAnswer;
     private ParticleSystem badAnswer;
 
-    void Start()
-    {
-        StartConfiguration();
-    }
+    void Start(){StartConfiguration();}
 
     void Update()
     {
-        SliderMovement(sliderSpeed);
+        Observe();
     }
 
     private void StartConfiguration()
     {
+        // After refactoring
+        _lifes = Lifes.GetComponent<Lifes>();
+        _timer = Timer.GetComponent<Timer>();
         sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
-        defaultSliderSpeed = sliderSpeed;
-        slider = sliderObject.GetComponent<Slider>();
+        // Before refactoring
         clickCounter = 0;
         operation = GameObject.FindGameObjectWithTag("Operation").GetComponent<TMPro.TextMeshProUGUI>();
         ResetFields();
@@ -54,6 +54,11 @@ public class Observer : MonoBehaviour
         badAnswer = BadAnswer.GetComponent<ParticleSystem>();
     }
 
+    private void Observe()
+    {
+        if(_timer.SliderMovement(timerSpeed)){_lifes.RemoveHealth();}
+        if(_lifes.IsDead()){sceneLoader.LoadScene("GameOver");}
+    }
     public void ClickEvent()
     {
         HandleButtonEvent();
@@ -69,9 +74,8 @@ public class Observer : MonoBehaviour
                 goodAnswer.Play();
             } else {
                 badAnswer.Play();
-                DecreaseHealth();
-                sliderSpeed = defaultSliderSpeed;
-                if(health.Count <= 0) sceneLoader.LoadScene("GameOver");
+                if(_lifes.IsDead()) sceneLoader.LoadScene("GameOver");
+                _lifes.RemoveHealth();
             }
             ResetFields();
             clickCounter = 0;
@@ -82,25 +86,7 @@ public class Observer : MonoBehaviour
         }
     }
 
-    private float SliderMovement(float sliderSpeed)
-    {
-        slider.value -= Time.deltaTime * sliderSpeed;
-        if(slider.value <= 1)
-        {
-            DecreaseHealth();
-            slider.value = 100;
-        }
-        return slider.value;
-    }
 
-    private void DecreaseHealth()
-    {
-        if (health.Count > 0)
-        {
-            Destroy(health[health.Count - 1]);
-            health.RemoveAt(health.Count - 1);
-        }
-    }
 
     private void ResetFields()
     {
@@ -110,8 +96,6 @@ public class Observer : MonoBehaviour
             Operator.SetChildTextValue(item, "");
         }
         ResetButtonsValue();
-        sliderSpeed += sliderSpeedBoost;
-        slider.value = 100;
     }
 
     private void HandleButtonEvent(){
